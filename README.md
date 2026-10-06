@@ -39,3 +39,7 @@ Same toolchain as the mobile-app repo:
 export JAVA_HOME=/opt/android-studio/jbr ANDROID_HOME=$HOME/Android/Sdk LC_ALL=en_US.utf8
 ./gradlew :app:assembleDebug :app:testDebugUnitTest
 ```
+
+## License
+
+The OpenVitals Bridge is licensed under the [`GNU Affero General Public License v3.0 or later`](LICENSE).

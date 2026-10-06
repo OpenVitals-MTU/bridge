@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- The bridge's job: pass the data the user allows on to other services. -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <!--
+        One permission per OpenVitals data group. Each OpenVitals build names
+        them after its own application id, so all three are listed. Android asks
+        the user for each group on its own; nothing is granted at install.
+    -->
+    <!-- OpenVitals release build. -->
+    <uses-permission android:name="tech.mmarca.openvitals.permission.READ_ACTIVITY" />
+    <uses-permission android:name="tech.mmarca.openvitals.permission.READ_WORKOUTS" />
+    <uses-permission android:name="tech.mmarca.openvitals.permission.READ_ROUTES" />
+    <uses-permission android:name="tech.mmarca.openvitals.permission.READ_SLEEP" />
+    <uses-permission android:name="tech.mmarca.openvitals.permission.READ_HEART" />
+    <uses-permission android:name="tech.mmarca.openvitals.permission.READ_VITALS" />
+    <uses-permission android:name="tech.mmarca.openvitals.permission.READ_BODY" />
+    <uses-permission android:name="tech.mmarca.openvitals.permission.READ_NUTRITION" />
+    <uses-permission android:name="tech.mmarca.openvitals.permission.READ_RECOVERY" />
+    <uses-permission android:name="tech.mmarca.openvitals.permission.READ_CYCLE" />
+    <uses-permission android:name="tech.mmarca.openvitals.permission.READ_SEXUAL_ACTIVITY" />
+    <!-- OpenVitals debug build. -->
+    <uses-permission android:name="tech.mmarca.openvitals.debug.permission.READ_ACTIVITY" />
+    <uses-permission android:name="tech.mmarca.openvitals.debug.permission.READ_WORKOUTS" />
+    <uses-permission android:name="tech.mmarca.openvitals.debug.permission.READ_ROUTES" />
+    <uses-permission android:name="tech.mmarca.openvitals.debug.permission.READ_SLEEP" />
+    <uses-permission android:name="tech.mmarca.openvitals.debug.permission.READ_HEART" />
+    <uses-permission android:name="tech.mmarca.openvitals.debug.permission.READ_VITALS" />
+    <uses-permission android:name="tech.mmarca.openvitals.debug.permission.READ_BODY" />
+    <uses-permission android:name="tech.mmarca.openvitals.debug.permission.READ_NUTRITION" />
+    <uses-permission android:name="tech.mmarca.openvitals.debug.permission.READ_RECOVERY" />
+    <uses-permission android:name="tech.mmarca.openvitals.debug.permission.READ_CYCLE" />
+    <uses-permission android:name="tech.mmarca.openvitals.debug.permission.READ_SEXUAL_ACTIVITY" />
+    <!-- OpenVitals ci build. -->
+    <uses-permission android:name="tech.mmarca.openvitals.ci.permission.READ_ACTIVITY" />
+    <uses-permission android:name="tech.mmarca.openvitals.ci.permission.READ_WORKOUTS" />
+    <uses-permission android:name="tech.mmarca.openvitals.ci.permission.READ_ROUTES" />
+    <uses-permission android:name="tech.mmarca.openvitals.ci.permission.READ_SLEEP" />
+    <uses-permission android:name="tech.mmarca.openvitals.ci.permission.READ_HEART" />
+    <uses-permission android:name="tech.mmarca.openvitals.ci.permission.READ_VITALS" />
+    <uses-permission android:name="tech.mmarca.openvitals.ci.permission.READ_BODY" />
+    <uses-permission android:name="tech.mmarca.openvitals.ci.permission.READ_NUTRITION" />
+    <uses-permission android:name="tech.mmarca.openvitals.ci.permission.READ_RECOVERY" />
+    <uses-permission android:name="tech.mmarca.openvitals.ci.permission.READ_CYCLE" />
+    <uses-permission android:name="tech.mmarca.openvitals.ci.permission.READ_SEXUAL_ACTIVITY" />
+
+    <!-- From Android 11 an app sees only the packages it names. -->
+    <queries>
+        <package android:name="tech.mmarca.openvitals" />
+        <package android:name="tech.mmarca.openvitals.debug" />
+        <package android:name="tech.mmarca.openvitals.ci" />
+        <intent>
+            <action android:name="tech.mmarca.openvitals.action.MANAGE_DATA_SHARING" />
+        </intent>
+    </queries>
+
+    <application
+        android:allowBackup="false"
+        android:icon="@android:drawable/sym_def_app_icon"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@android:style/Theme.Material.Light.NoActionBar">
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

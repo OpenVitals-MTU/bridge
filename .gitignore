@@ -1,0 +1,22 @@
+# Gradle
+.gradle/
+.kotlin/
+build/
+**/build/
+*.jar
+!gradle/wrapper/gradle-wrapper.jar
+
+# Local configuration
+local.properties
+
+# Android Studio / IntelliJ
+.idea/
+*.iml
+captures/
+
+# Signing
+*.jks
+*.keystore
+
+# AI tools
+.claude/
